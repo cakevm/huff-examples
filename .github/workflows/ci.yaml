@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -17,10 +17,10 @@ jobs:
         with:
           version: nightly
 
-      - name: Install Huff
-        uses: huff-language/huff-toolchain@v2
+      - name: Install Huff Neo Compiler
+        uses: cakevm/huff-neo-toolchain@v1
         with:
-          version: nightly
+          version: latest
 
       - name: Run Tests
         run: forge test -vvv
@@ -31,7 +31,7 @@ jobs:
     name: Run Scripts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -40,10 +40,10 @@ jobs:
         with:
           version: nightly
 
-      - name: Install Huff
-        uses: huff-language/huff-toolchain@v2
+      - name: Install Huff Neo Compiler
+        uses: cakevm/huff-neo-toolchain@v1
         with:
-          version: nightly
+          version: latest
 
       - name: Run Forge build
         run: |
